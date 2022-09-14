@@ -1,14 +1,11 @@
 pipeline {
   agent {
-    docker { image 'node:16-alpine' }
+    docker { image 'alpine' }
   }
   stages {
     stage('Test') {
-        environment {
-                  HOME="."
-         }
-          steps {
-                sh 'node --version form container'
+        steps {
+           sh 'node --version form container'
       }
     }
   }

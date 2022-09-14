@@ -4,8 +4,11 @@ pipeline {
   }
   stages {
     stage('Test') {
-      steps {
-        sh 'node --version form container'
+        environment {
+                  HOME="."
+         }
+          steps {
+                sh 'node --version form container'
       }
     }
   }
